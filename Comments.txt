@@ -1,0 +1,29 @@
+On the README.md
+  - Please check for typos between pushing the README.md file.
+  - There are no instruction on how to run the code.
+  - README.md is not very clear.
+
+The git has not been used: only one commit...
+
+Implementation:
+  - Challenge text required a namespace algebra.
+
+Checklist:
+  - sparse_matrix constructor:   OKAY
+  - upper_bound and lower_bound: OKAY
+  - comparison operator:         OKAY
+  - compress:                    OKAY
+  - uncompress:                  OKAY
+  - data is properly cleared:    OKAY
+  - resize method:               OKAY
+  - operator*:                   OKAY  (but the text required it to be friend, right?)
+  - reading from file:           OKAY
+  - call to non-const / const assignment operator: FAILED
+
+@@@
+const SparseMatrix<double, StorageOrder::Row_wise> M_row_const(M_row);
+std::cout << M_row_const[{0,3}] << std::endl;
+Rises an error. The operator[] is const, but you accessing a chunk of memory that has not being allocated.
+
+NO EXTRA.
+
